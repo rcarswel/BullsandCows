@@ -9,7 +9,7 @@ package edu.westga.cs6242.bullsandcows.Model;
  * - Checks guess against actual, returns bulls or cows.
  * - Updates game over, returns true/false.
  */
-public class BullCowGame {
+public class BullCowRules {
     private int numberLength;
     private String player1;
     private String player2;
@@ -21,7 +21,7 @@ public class BullCowGame {
      * - Sets number to blank
      * - Sets game ove to false
      */
-    public BullCowGame() {
+    public BullCowRules() {
         this.numberLength = 4;
         this.player1 = "";
         this.player2 = "";
