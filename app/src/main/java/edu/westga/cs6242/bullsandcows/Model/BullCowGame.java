@@ -1,4 +1,4 @@
-package Model;
+package edu.westga.cs6242.bullsandcows.Model;
 
 /**
  * Created by rcarswel on 4/19/2016. Version 1.
@@ -10,8 +10,6 @@ package Model;
  * - Updates game over, returns true/false.
  */
 public class BullCowGame {
-    //DEFAULTLENGTH will change to easy in later version
-    private final int DEFAULTLENGTH = 4;
     private int numberLength;
     private String player1;
     private String player2;
@@ -23,8 +21,8 @@ public class BullCowGame {
      * - Sets number to blank
      * - Sets game ove to false
      */
-    public void BullCowGame() {
-        this.setLength(DEFAULTLENGTH);
+    public BullCowGame() {
+        this.numberLength = 4;
         this.player1 = "";
         this.player2 = "";
         this.gameOver = false;

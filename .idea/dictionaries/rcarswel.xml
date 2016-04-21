@@ -3,6 +3,7 @@
     <words>
       <w>defaultdifficulty</w>
       <w>defaultlength</w>
+      <w>iobe</w>
     </words>
   </dictionary>
 </component>
