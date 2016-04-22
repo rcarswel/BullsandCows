@@ -64,7 +64,7 @@ public class BullCowRules {
      * @throws IndexOutOfBoundsException if not bounded players
      */
     public void setPlayer(String number, int player) {
-        if (validNumber(number)) {
+        if (Valid.Number(number, this.getLength())) {
             //Confirms player [1 or 2]
             //Invalid players will throw error
             if (player == 1) {
@@ -104,7 +104,7 @@ public class BullCowRules {
         String actual = this.getPlayer(player);
 
         //Counts bulls
-        if (validNumber(guess)) {
+        if (Valid.Number(guess, this.getLength())) {
             char[] actualArray = actual.toCharArray();
             char[] guessArray = guess.toCharArray();
 
@@ -140,7 +140,7 @@ public class BullCowRules {
         String actual = this.getPlayer(player);
 
         //Counts cows
-        if (validNumber(guess)) {
+        if (Valid.Number(guess, this.getLength())) {
             char[] actualArray = actual.toCharArray();
             char[] guessArray = guess.toCharArray();
 
@@ -160,32 +160,6 @@ public class BullCowRules {
     }
 
     /********** Private Methods **********/
-    /**
-     * Checks for a valid number, return boolean result
-     * @param number  to check as valid
-     * @return true if valid
-     * @throws IndexOutOfBoundsException if not bounded length
-     * @throws IllegalArgumentException if not all unique arguments
-     */
-    private boolean validNumber(String number) {
-        boolean valid = false;
-
-        //Checks for correct length
-        if (!(number.length() == this.getLength())) {
-            throw new IllegalArgumentException("The number doesn't have " + this.getLength() + " digits!");
-        }
-
-        //Checks for unique characters
-        for (char c : number.toCharArray()) {
-            valid = number.indexOf(c) == number.lastIndexOf(c);
-        }
-        if (!valid) {
-            throw new IllegalArgumentException("The number contains non-unique numbers!");
-        } else {
-            return true;
-        }
-    }
-
     /**
      * Checks both players have numbers
      *
