@@ -24,4 +24,12 @@ public class BullCowGame {
         this.playerA = new HumanPlayer();
         this.playerB = new ComputerPlayer();
     }
+
+    /**
+     * Start the game,
+     * player setup
+     */
+    public boolean start() {
+        return true;
+    }
 }
