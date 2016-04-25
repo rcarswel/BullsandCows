@@ -7,6 +7,8 @@ package edu.westga.cs6242.bullsandcows.Model;
  * - Sets/Gets player's number
  * - Gets results of guess
  * - Takes turn
+ * - Updates record
+ * - toString (Record)
  * - Resets player
  */
 public interface Player {
@@ -37,26 +39,6 @@ public interface Player {
      */
     void setNumber(String number);
 
-    /**
-     * Sets Bulls
-     *
-     * @param bulls
-     */
-    void setBulls(int bulls);
-
-    /**
-     * Sets Cows
-     *
-     * @param cows
-     */
-    void setCows(int cows);
-
-    /**
-     * Gets Bulls and Cows results string
-     * @return String results
-     */
-    String getResults();
-
     /********** Public Logic Methods **********/
     /**
      * Allows player to take turn
@@ -64,9 +46,19 @@ public interface Player {
     void takeTurn();
 
     /**
+     * Returns the guess results
+     * @return results of guess
+     */
+    void guessResults(String guessResults);
+
+    /**
+     * String of results for game
+     * @return Game results
+     */
+    String toString();
+
+    /**
      * Resets Player status and data
      */
     void reset();
-
-
 }

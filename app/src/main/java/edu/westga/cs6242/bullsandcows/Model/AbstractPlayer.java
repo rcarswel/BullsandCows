@@ -7,8 +7,7 @@ package edu.westga.cs6242.bullsandcows.Model;
 public abstract class AbstractPlayer implements Player {
     private boolean isMyTurn;
     private String number;
-    private int bulls;
-    private int cows;
+    private String results;
 
     /**
      * Creates a new player's
@@ -16,6 +15,7 @@ public abstract class AbstractPlayer implements Player {
     public AbstractPlayer() {
         this.isMyTurn = false;
         this.number = "";
+        this.results = "";
     }
 
     @Override
@@ -53,30 +53,6 @@ public abstract class AbstractPlayer implements Player {
         this.number = number;
     }
 
-    @Override
-    /**
-     * @See Player#setBulls(int bulls)
-     */
-    public void setBulls(int bulls) {
-        this.bulls = bulls;
-    }
-
-    @Override
-    /**
-     * @See Player#setCows(int cows)
-     */
-    public void setCows(int cows) {
-        this.cows = cows;
-    }
-
-    @Override
-    /**
-     * @See Player#getResults();
-     */
-    public String getResults() {
-        return this.getNumber() + ":\tBulls: " + this.bulls + "\tCows: " + this.cows;
-    }
-
     /**********
      * Public Logic Methods
      **********/
@@ -86,6 +62,25 @@ public abstract class AbstractPlayer implements Player {
      */
     public void takeTurn() {
         //Work on
+    }
+
+    @Override
+    /**
+     * @See Player#guess(String guess);
+     */
+    public void guessResults(String guessResults) {
+        this.results = this.results + guessResults + "\n";
+    }
+
+    @Override
+    /**
+     * @See Player#toString()
+     */
+    public String toString() {
+        String message = " ~ Guess Results ~ " +
+                "Number\tBulls\tCows" +
+                this.results;
+        return message;
     }
 
     @Override
