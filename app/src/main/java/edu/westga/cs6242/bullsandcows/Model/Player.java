@@ -47,7 +47,7 @@ public interface Player {
 
     /**
      * Returns the guess results
-     * @return results of guess
+     * @param guessResults string of bulls and cows
      */
     void guessResults(String guessResults);
 

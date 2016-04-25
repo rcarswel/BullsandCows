@@ -77,10 +77,9 @@ public abstract class AbstractPlayer implements Player {
      * @See Player#toString()
      */
     public String toString() {
-        String message = " ~ Guess Results ~ " +
+        return " ~ Guess Results ~ " +
                 "Number\tBulls\tCows" +
                 this.results;
-        return message;
     }
 
     @Override
