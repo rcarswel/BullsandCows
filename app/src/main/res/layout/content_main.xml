@@ -13,7 +13,44 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_centerHorizontal="true"
+        android:text="@string/Title"
+        android:textColor="#593001"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/softbtn"
+        android:onClick="click_Start"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/Start"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnStart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/softbtn"
+        android:onClick="click_Exit"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/Exit"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 </RelativeLayout>
