@@ -3,4 +3,7 @@
     <string name="Title">Bulls and Cows!</string>
     <string name="Exit">Exit!</string>
     <string name="Start">Start!</string>
+    <string name="Other_Results">Other Player Guess Results</string>
+    <string name="No_Guess">No Guess!</string>
+    <string name="Your_Results">~ Your Results ~</string>
 </resources>
