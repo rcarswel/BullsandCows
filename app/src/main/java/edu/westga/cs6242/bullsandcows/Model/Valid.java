@@ -8,7 +8,6 @@ package edu.westga.cs6242.bullsandcows.Model;
 public final class Valid {
     /**
      * Checks for a valid number, return boolean result
-     *
      * @param number to check as valid
      * @return true if valid
      * @throws IndexOutOfBoundsException if not bounded length
