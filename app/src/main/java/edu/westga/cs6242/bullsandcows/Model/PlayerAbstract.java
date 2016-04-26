@@ -2,22 +2,27 @@ package edu.westga.cs6242.bullsandcows.Model;
 
 /**
  * Created by rcarswel on 4/21/2016. Version 1.
- * AbstractPlayer for Bulls and Cows game.
+ * PlayerAbstract for Bulls and Cows game.
  */
-public abstract class AbstractPlayer implements Player {
+public abstract class PlayerAbstract implements Player {
     private boolean isMyTurn;
+    private int position;
     private String number;
     private String results;
 
     /**
      * Creates a new player's
      */
-    public AbstractPlayer() {
+    public PlayerAbstract() {
         this.isMyTurn = false;
+        this.position = 1;
         this.number = "";
         this.results = "";
     }
 
+    /***********
+     * Setters/getters
+     **********/
     @Override
     /**
      * @See Player#getIsMyTurn()
@@ -26,9 +31,6 @@ public abstract class AbstractPlayer implements Player {
         return this.isMyTurn;
     }
 
-    /**********
-     * Setters/getters
-     **********/
     @Override
     /**
      * @See Player#setIsMyTurn(boolean isMyTurn)
@@ -53,16 +55,25 @@ public abstract class AbstractPlayer implements Player {
         this.number = number;
     }
 
+    @Override
+    /**
+     * @See Player#getPosition
+     */
+    public int getPosition() {
+        return this.position;
+    }
+
+    @Override
+    /**
+     * @See Player#setPostion
+     */
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
     /**********
      * Public Logic Methods
      **********/
-    @Override
-    /**
-     * @See Player#takeTurn()
-     */
-    public void takeTurn() {
-        //Work on
-    }
 
     @Override
     /**
@@ -89,5 +100,13 @@ public abstract class AbstractPlayer implements Player {
     public void reset() {
         this.isMyTurn = false;
         this.number = "";
+        if (this.position == 1) {
+            this.position = 2;
+        } else if (this.position == 2) {
+            this.position = 1;
+        } else {
+            throw new IndexOutOfBoundsException("Position Error!");
+            //Error is for coding check, [Later Version May increase players]
+        }
     }
 }

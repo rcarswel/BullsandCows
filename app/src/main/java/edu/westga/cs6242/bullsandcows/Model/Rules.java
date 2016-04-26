@@ -22,9 +22,7 @@ public class Rules {
      */
     public Rules() {
         this.numberLength = 4;
-        this.player1 = "";
-        this.player2 = "";
-        this.gameOver = false;
+        this.reset();
     }
 
     /********** Setters/getters **********/
@@ -143,6 +141,15 @@ public class Rules {
         cows = cows - this.getBulls(guess, player);
 
         return cows;
+    }
+
+    /**
+     * Resets the game to play again
+     */
+    public void reset() {
+        this.player1 = "";
+        this.player2 = "";
+        this.gameOver = false;
     }
 
     /********** Private Methods **********/
