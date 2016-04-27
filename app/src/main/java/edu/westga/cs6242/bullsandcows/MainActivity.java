@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
      * Closes the game from main
      */
     public void click_Exit(View view) {
-        finish();
+        this.finish();
         System.exit(0);
     }
 }
