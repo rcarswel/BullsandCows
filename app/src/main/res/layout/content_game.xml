@@ -12,37 +12,138 @@
     tools:context="edu.westga.cs6242.bullsandcows.GameActivity"
     tools:showIn="@layout/activity_game">
 
-    <LinearLayout
-        android:id="@+id/llhOtherResults"
+    <TextView
+        android:id="@+id/tvOtherResults"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Other_Results"
+        android:textColor="#593001"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvOtherGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvOtherResults"
+        android:layout_centerHorizontal="true"
+        android:text="@string/No_Guess"
+        android:textColor="#593001"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvPlayerResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvOtherGuess"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15sp"
+        android:text="@string/Player_Results"
+        android:textColor="#593001"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvPlayerGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPlayerResults"
+        android:layout_centerHorizontal="true"
+        android:text="@string/No_Guess"
+        android:textColor="#593001"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:id="@+id/llResetExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
         android:weightSum="1">
 
-        <TextView
-            android:id="@+id/textView"
+        <Button
+            android:id="@+id/btnReset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Other_Results"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:background="@drawable/softbtn"
+            android:onClick="click_Reset"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/Reset"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView2"
+        <Button
+            android:id="@+id/btnQuit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-        
+            android:background="@drawable/softbtn"
+            android:onClick="click_Quit"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/Quit"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/llvPlayerResults"
+        android:id="@+id/llEditGuessPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/llResetExit"
         android:layout_centerHorizontal="true"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:weightSum="1">
 
+        <EditText
+            android:id="@+id/etGuessPlay"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5sp"
+            android:layout_marginStart="5sp"
+            android:inputType="number"
+            android:textColor="#593001"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnGuessPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/softbtn"
+            android:onClick="click_GuessPlay"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/Play"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvGameCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/llEditGuessPlay"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15sp"
+        android:text="@string/Game_Call"
+        android:textColor="#593001"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvWinnerLosser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvGameCall"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15sp"
+        android:text="@string/Winner"
+        android:textColor="#593001"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 </RelativeLayout>

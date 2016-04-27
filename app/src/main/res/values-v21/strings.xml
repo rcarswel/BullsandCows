@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Bulls and Cows</string>
+    <string name="action_settings">Settings</string>
     <string name="Title">Bulls and Cows!</string>
     <string name="Exit">Exit!</string>
     <string name="Start">Start!</string>
-    <string name="Other_Results">Other Player Guess Results</string>
-    <string name="No_Guess">No Guess!</string>
-    <string name="Your_Results">~ Your Results ~</string>
+    <string name="Other_Results"> ~ Player 2 Last Guess ~ </string>
+    <string name="No_Guess">No Guess, Yet!</string>
+    <string name="Player_Results">~ Player Results ~</string>
+    <string name="Reset">Reset!</string>
+    <string name="Quit">Quit!</string>
+    <string name="Guess">Guess!</string>
+    <string name="Play">Play!</string>
+    <string name="Game_Call">A Number with 4 Unique Digits!</string>
+    <string name="Winner">Winner!</string>
 </resources>

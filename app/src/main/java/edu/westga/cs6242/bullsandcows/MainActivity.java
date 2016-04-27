@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Starts the game from main
-     *
      * @param view current view
      */
     public void click_Start(View view) {
