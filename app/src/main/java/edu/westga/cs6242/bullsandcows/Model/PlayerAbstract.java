@@ -8,7 +8,9 @@ public abstract class PlayerAbstract implements Player {
     private boolean isMyTurn;
     private int position;
     private String number;
+    private String currentResults;
     private String results;
+    private Boolean winner;
 
     /**
      * Creates a new player's
@@ -17,7 +19,9 @@ public abstract class PlayerAbstract implements Player {
         this.isMyTurn = false;
         this.position = 1;
         this.number = "";
+        this.currentResults = "";
         this.results = "";
+        this.winner = false;
     }
 
     /***********
@@ -71,6 +75,34 @@ public abstract class PlayerAbstract implements Player {
         this.position = position;
     }
 
+    @Override
+    /**
+     * @See Player#getResult
+     */
+    public String getResult() {
+        if (this.currentResults == "") {
+            return "No Guess, Yet!";
+        } else {
+            return this.currentResults;
+        }
+    }
+
+    @Override
+    /**
+     * @See Player#getWinner
+     */
+    public Boolean getWinner() {
+        return this.winner;
+    }
+
+    @Override
+    /**
+     * @See Player#setWinner(Boolean)
+     */
+    public void setWinner(Boolean winner) {
+        this.winner = winner;
+    }
+
     /**********
      * Public Logic Methods
      **********/
@@ -80,6 +112,7 @@ public abstract class PlayerAbstract implements Player {
      * @See Player#guess(String guess);
      */
     public void guessResults(String guessResults) {
+        this.currentResults = guessResults;
         this.results = this.results + guessResults + "\n";
     }
 
@@ -88,8 +121,8 @@ public abstract class PlayerAbstract implements Player {
      * @See Player#toString()
      */
     public String toString() {
-        return " ~ Guess Results ~ " +
-                "Number\tBulls\tCows" +
+        return " ~ Guess Results ~ \n" +
+                "Number\tBulls\tCows\n" +
                 this.results;
     }
 
@@ -100,6 +133,7 @@ public abstract class PlayerAbstract implements Player {
     public void reset() {
         this.isMyTurn = false;
         this.number = "";
+        this.results = "";
         if (this.position == 1) {
             this.position = 2;
         } else if (this.position == 2) {

@@ -56,6 +56,26 @@ public interface Player {
      */
     void setPosition(int position);
 
+    /**
+     * Gets the current guess result
+     *
+     * @return result of last guess
+     */
+    String getResult();
+
+    /**
+     * Gets winner
+     */
+    Boolean getWinner();
+
+    /**
+     * Sets winner
+     *
+     * @param winner
+     */
+    void setWinner(Boolean winner);
+
+
     /********** Public Logic Methods **********/
     /**
      * Allows player to take turn

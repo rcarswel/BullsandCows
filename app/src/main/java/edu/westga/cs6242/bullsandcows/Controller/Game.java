@@ -32,6 +32,46 @@ public class Game {
         this.playerB.setPosition(2);
     }
 
+    /******** Setters and Getters *********/
+    /**
+     * Get the results for PlayerA
+     */
+    public String getPlayerAResults() {
+        return this.playerA.toString();
+    }
+
+    /**
+     * Get the status for player A
+     */
+    public String getPlayerAStatus() {
+        if (this.playerB.getWinner()) {
+            return "Loser!";
+        } else if (this.playerA.getWinner()) {
+            return "Winner!";
+        } else {
+            return "Keep Playing!";
+        }
+    }
+
+    /**
+     * Get the results for playerB
+     */
+    public String getPlayerBResult() {
+        return this.playerB.getResult();
+    }
+
+    /**
+     * Get game ready string
+     */
+    public String getReady() {
+        if (this.playerA.getNumber() == "") {
+            return "Play!";
+        } else {
+            return "Guess!";
+        }
+    }
+
+
     /**
      * Start the game,
      * player setup

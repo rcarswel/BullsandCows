@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_game"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="edu.westga.cs6242.bullsandcows.GameActivity"
+    tools:showIn="@layout/activity_game">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/llOtherResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvOtherResults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="#ffffff"
+                android:text="@string/Other_Results"
+                android:textColor="#593001"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvOtherGuess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvOtherResults"
+                android:background="#ffffff"
+                android:text="@string/No_Guess"
+                android:textColor="#593001"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/llPlayerResults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvPlayerResults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="#ffffff"
+                android:text="@string/Player_Results"
+                android:textColor="#593001"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPlayerGuess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tvPlayerResults"
+                android:background="#ffffff"
+                android:text="@string/No_Guess"
+                android:textColor="#593001"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llEditGuessPlayResetExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/etGuessPlay"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5sp"
+            android:layout_marginStart="5sp"
+            android:background="#ffffff"
+            android:inputType="number"
+            android:textColor="#593001"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnGuessPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/softbtn"
+            android:onClick="click_GuessPlay"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/Play"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/softbtn"
+            android:onClick="click_Reset"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/Reset"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnQuit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/softbtn"
+            android:onClick="click_Quit"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/Quit"
+            android:textColor="#ffffff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvGameCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/llEditGuessPlayResetExit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15sp"
+        android:background="#ffffff"
+        android:text="@string/Game_Call"
+        android:textColor="#593001"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvWinnerLosser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvGameCall"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15sp"
+        android:background="#ffffff"
+        android:text="@string/Winner"
+        android:textColor="#593001"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+</RelativeLayout>
