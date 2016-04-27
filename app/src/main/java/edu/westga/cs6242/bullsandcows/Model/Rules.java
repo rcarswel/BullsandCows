@@ -93,7 +93,7 @@ public class Rules {
     public String guess(String guess, int player) {
         int bulls = this.getBulls(guess, player);
         int cows = this.getCows(guess, player);
-        return guess + "\t" + bulls + "\t" + cows;
+        return "#: " + guess + "\tB: " + bulls + "\tC: " + cows;
     }
 
     /**

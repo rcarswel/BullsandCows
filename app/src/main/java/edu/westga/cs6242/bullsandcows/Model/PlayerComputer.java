@@ -35,15 +35,9 @@ public class PlayerComputer extends PlayerAbstract implements Player {
      * by design
      */
     public String getGuess() {
-        this.turns = this.turns + new Random().nextInt(1);
-        if (this.turns > 10) {
-            this.turns = 10;
-        }
-        try {
-            return this.guessArray.get(this.turns);
-        } catch (IllegalArgumentException iae) {
-            return this.guessArray.get(this.turns);
-        }
+        String guess = this.guessArray.get(this.turns);
+        this.turns = this.turns + 1;
+        return guess;
     }
 
     /********** Private Helpers *********/
@@ -73,16 +67,20 @@ public class PlayerComputer extends PlayerAbstract implements Player {
      */
     private void buildArray(String winningGuess) {
         this.guessArray = new ArrayList<>();
-        char[] charList = winningGuess.toCharArray();
+        String aLetter = Character.toString(winningGuess.charAt(0));
+        String bLetter = Character.toString(winningGuess.charAt(1));
+        String cLetter = Character.toString(winningGuess.charAt(2));
+        String dLetter = Character.toString(winningGuess.charAt(3));
+
         this.guessArray.add("1234");
-        this.guessArray.add(charList[0] + "234");
-        this.guessArray.add(charList[0] + "2" + charList[1] + "4");
-        this.guessArray.add(charList[0] + "2" + charList[1] + charList[2]);
-        this.guessArray.add(charList[0] + charList[3] + charList[1] + charList[3] + "");
-        this.guessArray.add(charList[0] + charList[1] + "34");
-        this.guessArray.add(charList[0] + charList[1] + charList[3] + "4");
-        this.guessArray.add(charList[0] + charList[1] + charList[3] + charList[2] + "");
-        this.guessArray.add(charList[0] + charList[1] + charList[2] + "4");
-        this.guessArray.add(charList[0] + charList[1] + charList[2] + charList[3] + "");
+        this.guessArray.add(aLetter + "234");
+        this.guessArray.add(aLetter + "2" + bLetter + "4");
+        this.guessArray.add(aLetter + "2" + bLetter + cLetter);
+        this.guessArray.add(aLetter + dLetter + bLetter + cLetter);
+        this.guessArray.add(aLetter + bLetter + "34");
+        this.guessArray.add(aLetter + bLetter + dLetter + "4");
+        this.guessArray.add(aLetter + bLetter + dLetter + cLetter);
+        this.guessArray.add(aLetter + bLetter + cLetter + "4");
+        this.guessArray.add(aLetter + bLetter + cLetter + dLetter);
     }
 }

@@ -104,7 +104,6 @@ public abstract class PlayerAbstract implements Player {
      */
     public String toString() {
         return " ~ Guess Results ~ \n" +
-                "Number\tBulls\tCows\n" +
                 this.results;
     }
 

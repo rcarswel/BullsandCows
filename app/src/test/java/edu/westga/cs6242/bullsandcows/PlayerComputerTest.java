@@ -16,6 +16,22 @@ import static org.junit.Assert.assertTrue;
 public class PlayerComputerTest {
     /**
      * Test for initial creation
+     * getNumber(), should be ""
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testAtCreationGetNumber() throws Exception {
+        //Create new game
+        PlayerComputer computer = new PlayerComputer();
+
+        //Number should be default
+        String number = computer.getNumber();
+        assertEquals("Number is " + number + " instead of blank.", "", number);
+    }
+
+    /**
+     * Test for initial creation
      * getPosition(), should be 1
      *
      * @throws Exception
@@ -32,66 +48,50 @@ public class PlayerComputerTest {
 
     /**
      * Test for initial creation
-     * getMyTurn(), should be false
+     * getResult(), should be No Guess, Yet!
      *
      * @throws Exception
      */
     @Test
-    public void testAtCreationGetMyTurn() throws Exception {
+    public void testAtCreationGetResult() throws Exception {
         //Create new game
         PlayerComputer computer = new PlayerComputer();
 
-        //MyTurn should be default
-        boolean turn = computer.getIsMyTurn();
-        assertFalse("My turn is " + turn + " instead of false.", turn);
+        //Result should be default
+        String result = computer.getResult();
+        assertEquals("Result is " + result + " instead of No Guess, Yet!.", "No Guess, Yet!", result);
     }
 
     /**
      * Test for initial creation
-     * getNumber(), should be ""
+     * getWinner(), should be false
      *
      * @throws Exception
      */
     @Test
-    public void testAtCreationGetNumber() throws Exception {
+    public void testAtCreationGetWinner() throws Exception {
         //Create new game
         PlayerComputer computer = new PlayerComputer();
 
-        //Number should be default
-        String number = computer.getNumber();
-        assertEquals("Number is " + number + " instead of blank.", "", number);
+        //Result should be default
+        Boolean winner = computer.getWinner();
+        assertFalse("Winner is " + winner + " instead of false.", winner);
     }
 
     /**
-     * setPosition(), should be 2
+     * Test for initial creation
+     * toString(), should be " ~ Guess Results ~ \n"
      *
      * @throws Exception
      */
     @Test
-    public void testSetPosition() throws Exception {
+    public void testAtCreationToString() throws Exception {
         //Create new game
         PlayerComputer computer = new PlayerComputer();
 
-        //Position should change to 2
-        computer.setPosition(2);
-        int position = computer.getPosition();
-        assertEquals("Position is " + position + " instead of 2.", 2, position, 0);
-    }
-
-    /**
-     * setMyTurn(), should be true
-     *
-     * @throws Exception
-     */
-    @Test
-    public void testSetMyTurn() throws Exception {
-        //Create new game
-        PlayerComputer computer = new PlayerComputer();
-
-        //MyTurn should change to True
-        computer.setIsMyTurn(true);
-        boolean turn = computer.getIsMyTurn();
-        assertTrue("My turn is " + turn + " instead of true.", turn);
+        //Result should be default
+        String result = computer.toString();
+        assertEquals("Result is " + result + " instead of  ~ Guess Results ~ .", " ~ Guess Results ~ \n", result);
     }
 
     /**
@@ -111,11 +111,66 @@ public class PlayerComputerTest {
     }
 
     /**
+     * setPosition(), should be 2
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testSetPosition() throws Exception {
+        //Create new game
+        PlayerComputer computer = new PlayerComputer();
+
+        //Position should change to 2
+        computer.setPosition(2);
+        int position = computer.getPosition();
+        assertEquals("Position is " + position + " instead of 2.", 2, position, 0);
+    }
+
+    /**
+     * setWinner(), should be true
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testSetWinner() throws Exception {
+        //Create new game
+        PlayerComputer computer = new PlayerComputer();
+
+        //Winner should change to true
+        computer.setWinner(true);
+        Boolean winner = computer.getWinner();
+        assertTrue("Winner is " + winner + " instead of true.", winner);
+    }
+
+    /**
+     * guessResults(String) and getResult()
+     * should be,
+     * ~ Guess Results ~
+     * 1234    2       2;
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testResult() throws Exception {
+        //Create new game
+        PlayerComputer computer = new PlayerComputer();
+
+        //Correct Results
+        String correct = "#: 1234\tB: 2\tC: 2";
+
+        //Test
+        computer.guessResults("#: 1234\tB: 2\tC: 2");
+        String results = computer.getResult();
+        assertEquals("Results are not correct", correct, results);
+    }
+
+
+    /**
      * guessResults(String) and toString()
      * should be,
      * ~ Guess Results ~
      * Number  Bulls   Cows
-     * 1234    4       4;
+     * 1234    2       2;
      *
      * @throws Exception
      */
@@ -125,12 +180,11 @@ public class PlayerComputerTest {
         PlayerComputer computer = new PlayerComputer();
 
         //Correct Results
-        String correct = " ~ Guess Results ~ " +
-                "Number\tBulls\tCows" +
-                "1234\t4\t\t4\n";
+        String correct = " ~ Guess Results ~ \n" +
+                "#: 1234\tB: 2\tC: 2\n";
 
-        //
-        computer.guessResults("1234\t4\t\t4");
+        //Test
+        computer.guessResults("#: 1234\tB: 2\tC: 2");
         String results = computer.toString();
         assertEquals("Results are not correct", correct, results);
     }
@@ -147,7 +201,6 @@ public class PlayerComputerTest {
 
         //Set Player
         computer.setNumber("1234");
-        computer.setIsMyTurn(true);
 
         //Reset
         computer.reset();
@@ -155,10 +208,6 @@ public class PlayerComputerTest {
         //Position should 2
         int position = computer.getPosition();
         assertEquals("Position is " + position + " instead of 2.", 2, position, 0);
-
-        //MyTurn should be default
-        boolean turn = computer.getIsMyTurn();
-        assertFalse("My turn is " + turn + " instead of false.", turn);
 
         //Number should be default
         String number = computer.getNumber();
@@ -177,7 +226,6 @@ public class PlayerComputerTest {
 
         //Set Player
         computer.setNumber("1234");
-        computer.setIsMyTurn(true);
         computer.setPosition(2);
 
         //Reset
@@ -187,15 +235,12 @@ public class PlayerComputerTest {
         int position = computer.getPosition();
         assertEquals("Position is " + position + " instead of 1.", 1, position, 0);
 
-        //MyTurn should be default
-        boolean turn = computer.getIsMyTurn();
-        assertFalse("My turn is " + turn + " instead of false.", turn);
-
         //Number should be default
         String number = computer.getNumber();
         assertEquals("Number is " + number + " instead of blank.", "", number);
     }
 
+    /******** Computer Only Test **********/
     /**
      * Test for play
      *
@@ -231,5 +276,24 @@ public class PlayerComputerTest {
         //Guess should be valid
         Boolean valid = Valid.Number(guess, 4);
         assertTrue("Number is not valid", valid);
+    }
+
+    /**
+     * Test for guess again
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testGuess2() throws Exception {
+        //Create new game
+        PlayerComputer computer = new PlayerComputer();
+
+        //Builds Play then guess
+        computer.play("5432");
+        String guessA = computer.getGuess();
+        String guessB = computer.getGuess();
+
+        //Guess should be valid "Guess are both " + guessA + "."
+        assertNotEquals(guessA, guessB);
     }
 }
