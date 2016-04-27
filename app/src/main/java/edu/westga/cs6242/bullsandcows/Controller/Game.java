@@ -26,7 +26,6 @@ public class Game {
         this.rules = new Rules();
         // Current 1 Human/ 1 Computer
         this.playerA = new PlayerHuman();
-        this.playerA.setIsMyTurn(true);
         this.playerA.setPosition(1);
         this.playerB = new PlayerComputer();
         this.playerB.setPosition(2);
@@ -64,37 +63,28 @@ public class Game {
      * Get game ready string
      */
     public String getReady() {
-        if (this.playerA.getNumber() == "") {
+        if (!(this.rules.ready())) {
             return "Play!";
         } else {
             return "Guess!";
         }
     }
 
-
+    /********* Public Logic Methods **********/
     /**
-     * Start the game,
-     * player setup
-     * Size = 4, and computer player automatically
-     * [Later Versions can Update]
-     * @param number for human player
+     * Plays Game
      */
-    public boolean start(String number) {
-        boolean started = false;
-        //Validates Number and Sets
-        try {
-            if (Valid.Number(number, this.rules.getLength())) {
-                this.playerA.setNumber(number);
-
-                //Creates Computer Player
-                this.playerB.play(number);
-
-                started = true;
+    public void play(String number) {
+        if (!(this.rules.getGameOver())) {
+            if (this.rules.ready()) {
+                this.guess(number);
+            } else {
+                this.start(number);
             }
-        } catch (IllegalArgumentException iae) {
-            started = false;
+        } else {
+            this.reset();
+            this.start(number);
         }
-        return started;
     }
 
     /**
@@ -107,15 +97,60 @@ public class Game {
         if (this.playerA.getPosition() == 1) {
             this.playerA.reset();
             this.playerB.reset();
-            this.playerB.setIsMyTurn(true);
             this.playerB.setPosition(1);
             this.playerA.setPosition(2);
         } else {
             this.playerA.reset();
             this.playerB.reset();
-            this.playerA.setIsMyTurn(true);
             this.playerA.setPosition(1);
             this.playerB.setPosition(2);
+        }
+    }
+
+    /******** Private Methods *********/
+    /**
+     * Start the game,
+     * player setup
+     * Size = 4, and computer player automatically
+     * [Later Versions can Update]
+     *
+     * @param number for human player
+     */
+    private boolean start(String number) {
+        //Validates Number and Sets
+        if (Valid.Number(number, this.rules.getLength())) {
+            this.playerA.setNumber(number);
+            this.rules.setPlayer(number, this.playerA.getPosition());
+
+            //Creates Computer Player
+            this.playerB.play(number);
+            this.rules.setPlayer(this.playerB.getNumber(), this.playerB.getPosition());
+        }
+
+        return this.rules.ready();
+    }
+
+    /**
+     * Guess for both players
+     */
+    private void guess(String number) {
+        //Set first player
+        if (this.playerA.getPosition() == 1) {
+            //Player 1 Plays
+            this.playerA.guessResults(rules.guess(number, this.playerB.getPosition()));
+            this.playerA.setWinner(this.rules.getGameOver());
+
+            //Player 2 Plays
+            this.playerB.guessResults(rules.guess(this.playerB.getGuess(), this.playerA.getPosition()));
+            this.playerB.setWinner(this.rules.getGameOver());
+        } else {
+            //Player 1 Plays
+            this.playerB.guessResults(rules.guess(this.playerB.getGuess(), this.playerA.getPosition()));
+            this.playerB.setWinner(this.rules.getGameOver());
+
+            //Player 2 Plays
+            this.playerA.guessResults(rules.guess(number, this.playerB.getPosition()));
+            this.playerA.setWinner(this.rules.getGameOver());
         }
     }
 }

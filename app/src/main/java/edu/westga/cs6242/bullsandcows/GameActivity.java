@@ -42,7 +42,13 @@ public class GameActivity extends AppCompatActivity {
     /**
      * Plays game
      */
-    public void click_Play(View view) {
+    public void click_GuessPlay(View view) {
+        String number = this.etGuessPlay.getText().toString();
+        try {
+            this.game.play(number);
+        } catch (IllegalArgumentException iae) {
+            makeToast(iae.getMessage());
+        }
         this.loadContent();
     }
 

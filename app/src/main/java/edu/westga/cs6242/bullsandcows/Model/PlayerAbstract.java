@@ -5,42 +5,21 @@ package edu.westga.cs6242.bullsandcows.Model;
  * PlayerAbstract for Bulls and Cows game.
  */
 public abstract class PlayerAbstract implements Player {
-    private boolean isMyTurn;
-    private int position;
     private String number;
+    private int position;
     private String currentResults;
-    private String results;
     private Boolean winner;
+    private String results;
 
     /**
      * Creates a new player's
      */
     public PlayerAbstract() {
-        this.isMyTurn = false;
-        this.position = 1;
         this.number = "";
+        this.position = 1;
         this.currentResults = "";
-        this.results = "";
         this.winner = false;
-    }
-
-    /***********
-     * Setters/getters
-     **********/
-    @Override
-    /**
-     * @See Player#getIsMyTurn()
-     */
-    public boolean getIsMyTurn() {
-        return this.isMyTurn;
-    }
-
-    @Override
-    /**
-     * @See Player#setIsMyTurn(boolean isMyTurn)
-     */
-    public void setIsMyTurn(boolean isMyTurn) {
-        this.isMyTurn = isMyTurn;
+        this.results = "";
     }
 
     @Override
@@ -51,6 +30,9 @@ public abstract class PlayerAbstract implements Player {
         return this.number;
     }
 
+    /***********
+     * Setters/getters
+     **********/
     @Override
     /**
      * @See Player#setNumber(String number);
@@ -80,7 +62,7 @@ public abstract class PlayerAbstract implements Player {
      * @See Player#getResult
      */
     public String getResult() {
-        if (this.currentResults == "") {
+        if (this.currentResults.length() == 0) {
             return "No Guess, Yet!";
         } else {
             return this.currentResults;
@@ -129,18 +111,20 @@ public abstract class PlayerAbstract implements Player {
     @Override
     /**
      * @See Player#reset();
+     * @Throws IllegalArgumentException if not correct positions
      */
     public void reset() {
-        this.isMyTurn = false;
         this.number = "";
-        this.results = "";
         if (this.position == 1) {
             this.position = 2;
         } else if (this.position == 2) {
             this.position = 1;
         } else {
-            throw new IndexOutOfBoundsException("Position Error!");
+            throw new IllegalArgumentException("Position Error!");
             //Error is for coding check, [Later Version May increase players]
         }
+        this.currentResults = "";
+        this.winner = false;
+        this.results = "";
     }
 }
