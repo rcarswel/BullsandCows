@@ -56,7 +56,7 @@ public class Game {
      * Get the results for playerB
      */
     public String getPlayerBResult() {
-        return "Your #: " + this.playerA.getNumber() + "\n" +
+        return "Your #: " + this.playerA.getNumber() + "\t" +
                 this.playerB.getResult();
     }
 

@@ -35,7 +35,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
 
         //Click Play
         this.buttonClickPlay();
-        assertEquals("Your #: \nNo Guess, Yet!", tvOtherGuess.getText().toString());
+        assertEquals("Your #: \tNo Guess, Yet!", tvOtherGuess.getText().toString());
         assertEquals(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
         assertEquals("Keep Playing!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
@@ -43,7 +43,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
 
         //Click Reset
         this.buttonClickReset();
-        assertEquals("Your #: \nNo Guess, Yet!", tvOtherGuess.getText().toString());
+        assertEquals("Your #: \tNo Guess, Yet!", tvOtherGuess.getText().toString());
         assertEquals(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
         assertEquals("Keep Playing!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
@@ -69,7 +69,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
 
         //Click Play
         this.buttonClickPlay();
-        assertEquals("Your #: 1234\nNo Guess, Yet!", tvOtherGuess.getText().toString());
+        assertEquals("Your #: 1234\tNo Guess, Yet!", tvOtherGuess.getText().toString());
         assertEquals(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
         assertEquals("Keep Playing!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
@@ -95,7 +95,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
 
         //Click Play
         this.buttonClickPlay();
-        assertEquals("Your #: \nNo Guess, Yet!", tvOtherGuess.getText().toString());
+        assertEquals("Your #: \tNo Guess, Yet!", tvOtherGuess.getText().toString());
         assertEquals(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
         assertEquals("Keep Playing!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
@@ -121,7 +121,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
 
         //Click Play
         this.buttonClickPlay();
-        assertEquals("Your #: 1234\nNo Guess, Yet!", tvOtherGuess.getText().toString());
+        assertEquals("Your #: 1234\tNo Guess, Yet!", tvOtherGuess.getText().toString());
         assertEquals(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
         assertEquals("Keep Playing!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
@@ -138,7 +138,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
 
         //Click Play
         this.buttonClickPlay();
-        assertEquals("Your #: 1234\n#: 1234\tB: 4\tC: 0", tvOtherGuess.getText().toString());
+        assertEquals("Your #: 1234\t#: 1234\tB: 4\tC: 0", tvOtherGuess.getText().toString());
         assertNotSame(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
         assertEquals("Loser!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
@@ -164,7 +164,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
 
         //Click Play
         this.buttonClickPlay();
-        assertEquals("Your #: 5678\nNo Guess, Yet!", tvOtherGuess.getText().toString());
+        assertEquals("Your #: 5678\tNo Guess, Yet!", tvOtherGuess.getText().toString());
         assertEquals(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
         assertEquals("Keep Playing!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
@@ -181,7 +181,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
 
         //Click Play
         this.buttonClickPlay();
-        assertNotSame("Your #: 5678\n#: 1234\tB: 4\tC: 0", tvOtherGuess.getText().toString());
+        assertNotSame("Your #: 5678\t#: 1234\tB: 4\tC: 0", tvOtherGuess.getText().toString());
         assertNotSame(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
         assertEquals("Keep Playing!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
@@ -207,7 +207,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
 
         //Click Play
         this.buttonClickPlay();
-        assertEquals("Your #: 1234\nNo Guess, Yet!", tvOtherGuess.getText().toString());
+        assertEquals("Your #: 1234\tNo Guess, Yet!", tvOtherGuess.getText().toString());
         assertEquals(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
         assertEquals("Keep Playing!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
@@ -224,7 +224,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
 
         //Click Play
         this.buttonClickReset();
-        assertNotSame("Your #: \nNo Guess, Yet!", tvOtherGuess.getText().toString());
+        assertNotSame("Your #: \tNo Guess, Yet!", tvOtherGuess.getText().toString());
         assertNotSame(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
         assertEquals("Keep Playing!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
