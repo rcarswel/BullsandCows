@@ -104,7 +104,7 @@ public class GameTest {
 
         game.play("9876");
         results = game.getPlayerAStatus();
-        assertEquals("Results is " + results + " instead of correct.", "Loser!", results);
+        assertEquals("Results is " + results + " instead of correct.", "Game Over!", results);
     }
 
     /**

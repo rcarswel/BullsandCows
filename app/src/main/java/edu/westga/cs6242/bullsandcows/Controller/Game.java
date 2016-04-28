@@ -43,10 +43,8 @@ public class Game {
      * Get the status for player A
      */
     public String getPlayerAStatus() {
-        if (this.playerB.getWinner()) {
-            return "Loser!";
-        } else if (this.playerA.getWinner()) {
-            return "Winner!";
+        if (this.rules.getGameOver()) {
+            return "Game Over!";
         } else {
             return "Keep Playing!";
         }

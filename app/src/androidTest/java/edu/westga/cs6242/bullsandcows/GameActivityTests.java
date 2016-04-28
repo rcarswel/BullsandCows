@@ -140,7 +140,7 @@ public class GameActivityTests extends ActivityInstrumentationTestCase2<GameActi
         this.buttonClickPlay();
         assertEquals("Your #: 1234\t#: 1234\tB: 4\tC: 0", tvOtherGuess.getText().toString());
         assertNotSame(" ~ Guess Results ~ \n", tvPlayerGuess.getText().toString());
-        assertEquals("Loser!", tvWinnerLoser.getText().toString());
+        assertEquals("Game Over!", tvWinnerLoser.getText().toString());
         assertEquals("", etGuessPlay.getText().toString());
         assertEquals("Play!", btnGuessPlay.getText().toString());
     }
