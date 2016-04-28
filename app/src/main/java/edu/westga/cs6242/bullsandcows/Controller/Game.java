@@ -56,14 +56,15 @@ public class Game {
      * Get the results for playerB
      */
     public String getPlayerBResult() {
-        return this.playerB.getResult();
+        return "Your #: " + this.playerA.getNumber() + "\n" +
+                this.playerB.getResult();
     }
 
     /**
      * Get game ready string
      */
     public String getReady() {
-        if (!(this.rules.ready())) {
+        if (!(this.rules.ready()) || this.rules.getGameOver()) {
             return "Play!";
         } else {
             return "Guess!";

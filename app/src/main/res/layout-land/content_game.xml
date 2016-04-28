@@ -30,10 +30,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:background="#ffffff"
+                android:background="@color/boxback"
                 android:text="@string/Other_Results"
-                android:textColor="#593001"
-                android:textSize="25sp"
+                android:textColor="@color/text"
+                android:textSize="@dimen/text_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -41,10 +41,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvOtherResults"
-                android:background="#ffffff"
+                android:background="@color/boxback"
                 android:text="@string/No_Guess"
-                android:textColor="#593001"
-                android:textSize="25sp" />
+                android:textColor="@color/text"
+                android:textSize="@dimen/text_size" />
 
         </RelativeLayout>
 
@@ -59,10 +59,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:background="#ffffff"
+                android:background="@color/boxback"
                 android:text="@string/Player_Results"
-                android:textColor="#593001"
-                android:textSize="25sp"
+                android:textColor="@color/text"
+                android:textSize="@dimen/text_size"
                 android:textStyle="bold" />
 
             <TextView
@@ -72,10 +72,10 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/tvPlayerResults"
-                android:background="#ffffff"
+                android:background="@color/boxback"
                 android:text="@string/No_Guess"
-                android:textColor="#593001"
-                android:textSize="25sp" />
+                android:textColor="@color/text"
+                android:textSize="@dimen/text_size" />
 
         </RelativeLayout>
     </LinearLayout>
@@ -95,10 +95,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5sp"
             android:layout_marginStart="5sp"
-            android:background="#ffffff"
+            android:background="#fff8"
             android:inputType="number"
-            android:textColor="#593001"
-            android:textSize="25sp" />
+            android:textColor="@color/text"
+            android:textSize="@dimen/text_size" />
 
         <Button
             android:id="@+id/btnGuessPlay"
@@ -110,7 +110,7 @@
             android:paddingRight="10dp"
             android:text="@string/Play"
             android:textColor="#ffffff"
-            android:textSize="25sp"
+            android:textSize="@dimen/text_size"
             android:textStyle="bold" />
 
         <Button
@@ -123,7 +123,7 @@
             android:paddingRight="10dp"
             android:text="@string/Reset"
             android:textColor="#ffffff"
-            android:textSize="25sp"
+            android:textSize="@dimen/text_size"
             android:textStyle="bold" />
 
         <Button
@@ -136,7 +136,7 @@
             android:paddingRight="10dp"
             android:text="@string/Quit"
             android:textColor="#ffffff"
-            android:textSize="25sp"
+            android:textSize="@dimen/text_size"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -147,22 +147,22 @@
         android:layout_above="@+id/llEditGuessPlayResetExit"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15sp"
-        android:background="#ffffff"
+        android:background="@color/boxback"
         android:text="@string/Game_Call"
-        android:textColor="#593001"
-        android:textSize="20sp"
+        android:textColor="@color/text"
+        android:textSize="@dimen/text_size"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tvWinnerLosser"
+        android:id="@+id/tvWinnerLoser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/tvGameCall"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="15sp"
-        android:background="#ffffff"
+        android:background="@color/boxback"
         android:text="@string/Winner"
-        android:textColor="#593001"
+        android:textColor="@color/text"
         android:textSize="30sp"
         android:textStyle="bold" />
 </RelativeLayout>

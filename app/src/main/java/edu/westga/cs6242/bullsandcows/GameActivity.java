@@ -31,7 +31,7 @@ public class GameActivity extends AppCompatActivity {
         this.game = new Game();
         this.tvOtherGuess = (TextView) findViewById(R.id.tvOtherGuess);
         this.tvPlayerGuess = (TextView) findViewById(R.id.tvPlayerGuess);
-        this.tvWinnerLoser = (TextView) findViewById(R.id.tvWinnerLosser);
+        this.tvWinnerLoser = (TextView) findViewById(R.id.tvWinnerLoser);
         this.etGuessPlay = (EditText) findViewById(R.id.etGuessPlay);
         this.btnGuessPlay = (Button) findViewById(R.id.btnGuessPlay);
 

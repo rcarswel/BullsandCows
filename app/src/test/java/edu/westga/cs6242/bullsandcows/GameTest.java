@@ -53,7 +53,7 @@ public class GameTest {
 
         //Should be default
         String results = game.getPlayerBResult();
-        assertEquals("Results is " + results + " instead of correct.", "No Guess, Yet!", results);
+        assertEquals("Results is " + results + " instead of correct.", "Your #: \nNo Guess, Yet!", results);
     }
 
     /**

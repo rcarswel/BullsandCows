@@ -46,4 +46,6 @@ public class MainActivityTests extends ActivityInstrumentationTestCase2<MainActi
         assertNotNull(gameActivity);
         gameActivity.finish();
     }
+
+
 }

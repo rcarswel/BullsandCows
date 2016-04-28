@@ -25,6 +25,7 @@
 
     <LinearLayout
         android:id="@+id/llResetExit"
+        style="?android:buttonBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -34,6 +35,7 @@
 
         <Button
             android:id="@+id/btnStart"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/softbtn"
@@ -42,11 +44,12 @@
             android:paddingRight="10dp"
             android:text="@string/Start"
             android:textColor="#ffffff"
-            android:textSize="25sp"
+            android:textSize="@dimen/text_size"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnExit"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/softbtn"
@@ -55,7 +58,7 @@
             android:paddingRight="10dp"
             android:text="@string/Exit"
             android:textColor="#ffffff"
-            android:textSize="25sp"
+            android:textSize="@dimen/text_size"
             android:textStyle="bold" />
     </LinearLayout>
 </RelativeLayout>
